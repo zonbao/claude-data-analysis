@@ -171,6 +171,25 @@ The project uses Claude Code's configuration system. Key settings:
 - **Correlation**: Heatmaps, scatter plots, correlation matrices
 - **Comparison**: Bar charts, grouped charts, small multiples
 
+### 中文显示支持
+如果使用 `/visualize` 生成的图表中中文不显示或出现方块，请在生成图表前执行中文字体配置（自动识别字体内部名称）：
+
+```bash
+python visualizations/font_setup.py
+```
+
+将常用中文字体（如 NotoSansSC-Regular.otf、思源黑体、微软雅黑等）放入 `visualizations/fonts/` 目录后运行上述命令，即可让 Matplotlib/Seaborn 和 Plotly 的标题、坐标轴、注释正常显示中文。详细步骤见《docs/chinese_font_support.md》。
+
+## 🔄 将本地修改推送到你的 GitHub 仓库
+
+如果本地已有提交但 GitHub 上看不到更新，通常是还未配置远程或未推送当前分支：
+
+1. 检查远程是否已配置：`git remote -v`（若为空需要添加）。
+2. 添加远程：`git remote add origin https://github.com/你的用户名/claude-data-analysis`。
+3. 推送当前分支（例如 `work`）：`git push -u origin work`。
+
+更多常见问题与处理方法见《docs/github_sync.md》。
+
 ## 🔍 Code Generation
 
 ### Supported Languages
